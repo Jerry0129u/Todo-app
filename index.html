@@ -4,26 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+    <title>Todo List</title>
 </head>
 <body>
-  <div id="width">
 
-    <sectoin id="hero-section">
-     <div id="header">
-    <h1 id="title">My ToDo List</h1>
-    <button class="check-button"><span>0 / 6</span></button>
-    </div>
+    <div id="width">
+      <div class="box">
 
-    <div id="checked-container">
-    <div id="value"></div>
-   <input id="input" / placeholder="what's next?" maxlength="20">
-   <button onclick="addTask();" id="button">Add task</button>
-</div>
-</sectoin>
+             <div id="header">
+                <h1 id="title" >My ToDo List</h1>
+                <button class="button is-rounded">0/6</button>
+             </div>
 
-</div>
+             <div id="value"></div>
 
-    <script src="main.js"></script>
+             <div id="control">
+                  <input id="input" class="input" type="text" placeholder="What's next?" />
+                  <button id="button" class="button" onclick="addTask();">Add Task</button>
+             </div>
+
+        </div>
+     </div>
+
+  <script src="main.js"></script> 
 </body>
 </html>
