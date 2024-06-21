@@ -43,36 +43,16 @@ body {
     margin-top: 10px;
 }
 
-.task-item {
+
+#result {
     margin-top: 20px;
     padding: 10px;
     margin-bottom: 5px;
     border-radius: 5px;
     font-size: 16px;
     font-weight: 500;
-    color: 	hsl(0, 0%, 71%);
+    color: #fff;
     box-shadow: inset 1px 1px 2px hsl(0, 0%, 25%);
 }
 
-.edit-button {
-    position: fixed;
-    margin-left: 245px;
-    padding: 5px;
-    border-radius: 5px;
-    font-size: 10px;
-    font-weight: 500;
-    color: hsl(0, 0%, 48%);
-    box-shadow: inset 1px 1px 2px hsl(0, 0%, 25%);
-}
-
-.delete-button {
-    position: fixed;
-    margin-left: 195px;
-    padding: 5px;
-    border-radius: 5px;
-    font-size: 10px;
-    font-weight: 500;
-    color: hsl(0, 0%, 48%);
-    box-shadow: inset 1px 1px 2px hsl(0, 0%, 25%);
-}
 
