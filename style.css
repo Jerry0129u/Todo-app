@@ -43,6 +43,8 @@ body {
 @media screen and (max-width: 420px) {
   #task-form {
     width: 340px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }
 
