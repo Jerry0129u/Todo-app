@@ -1,51 +1,71 @@
+// Initialize an empty array to store tasks
+let tasks = [];
+
+// Function to add a task
 function addTask() {
-    const input = document.getElementById("input");
-    const value = document.getElementById("value");
+  const taskInput = document.getElementById("task-input").value;
+  const whoInput = document.getElementById("who-input").value;
+  const whenInput = document.getElementById("when-input").value;
 
-    // Create a new task item
-    const taskItem = document.createElement("div");
-    taskItem.classList.add("task-item");
+  if (taskInput && whoInput && whenInput) {
+    const task = {
+      task: taskInput,
+      who: whoInput,
+      when: whenInput,
+    };
 
-    // Create task text content
-    const taskText = document.createElement("span");
-    taskText.textContent = input.value;
-    taskItem.appendChild(taskText);
-
-
-
-    const deleteButton = document.createElement("button");
-    deleteButton.textContent = "Delete";
-    deleteButton.classList.add("delete-button");
-    deleteButton.addEventListener("click", function() {
-    if (confirm("Are you sure you want to delete your task?")) {
-        const parentElement = deleteButton.parentElement;
-        parentElement.remove();
-
-    }
-    });
-    taskItem.appendChild(deleteButton);
-
-
-
-    const editButton = document.createElement("button");
-    editButton.textContent = "Edit";
-    editButton.classList.add("edit-button");
-    editButton.addEventListener("click", function() {
-    const newText = prompt("You can edit old task value:", taskText.textContent);
-    if (newText != null) {
-        taskText.textContent = newText;
-
-    }
-    });
-    taskItem.appendChild(editButton);
-
-
-    // Append the task item to the value container
-    value.appendChild(taskItem);
-
-    // Clear input
-    input.value = "  ";
+    tasks.push(task);
+    clearInputFields();
+    updateTaskList();
+  } else {
+    alert("Please fill in all fields.");
+  }
 }
 
+// Function to clear input fields
+function clearInputFields() {
+  document.getElementById("task-input").value = "";
+  document.getElementById("who-input").value = "";
+  document.getElementById("when-input").value = "";
+}
 
+// Function to update the task list and the counter
+function updateTaskList() {
+  const valueDiv = document.getElementById("value");
+  valueDiv.innerHTML = "";
 
+  tasks.forEach((task, index) => {
+    const taskDiv = document.createElement("div");
+    taskDiv.className = "task-item";
+    taskDiv.innerHTML = `
+      <p><strong>Хийх зүйл:</strong> ${task.task}</p>
+      <p><strong>Хэн хийх:</strong> ${task.who}</p>
+      <p><strong>Хэзээ дуусгах:</strong> ${task.when}</p>
+      <br>
+      <button class="button" onclick="deleteTask(${index})">Устгах</button>
+      <button class="button" onclick="editTask(${index})">Засах</button>
+      <hr />
+    `;
+    valueDiv.appendChild(taskDiv);
+  });
+
+  const counterButton = document.querySelector(".button.is-rounded");
+  counterButton.textContent = `${tasks.length}/25`;
+}
+
+// Function to delete a task
+function deleteTask(index) {
+  tasks.splice(index, 1);
+  updateTaskList();
+}
+
+// Function to edit a task
+function editTask(index) {
+  const task = tasks[index];
+  document.getElementById("task-input").value = task.task;
+  document.getElementById("who хийх-input").value = task.who;
+  document.getElementById("when дуусгах-input").value = task.when;
+
+  // Remove the task from the list
+  deleteTask(index);
+}

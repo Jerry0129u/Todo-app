@@ -1,33 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
-    <title>Todo List</title>
-</head>
-<body>
-
+<html lang="mn">
+  <!-- Set language to Mongolian -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css"
+    />
+    <title>Багажийн жагсаалт</title>
+    <!-- "Todo List" in Mongolian -->
+  </head>
+  <body>
     <div id="width">
       <div class="box">
-
-            <div id="header">
-              <h1 id="title" >My ToDo List</h1>
-              <button class="button is-rounded" style="color:hsl(0, 0%, 71%);">0/6</button>
-             </div>
-
-             <div id="value"></div>
-             
-             <div id="control">
-               <input maxlength="1" id="input" class="input" type="text" placeholder="What's next?" />
-               <button id="button" class="button" onclick="addTask();" 
-               style="color: hsl(0, 0%, 48%);">Add Task</button>
-             </div>
-
+        <div id="header">
+          <h1 id="title">БОЗ-ийн даалгаврын менежмент</h1>
+          <!-- "Task Management of BOZ" -->
+          <button class="button is-rounded" style="color: hsl(0, 0%, 71%)">
+            0/25
+          </button>
         </div>
-     </div>
 
-  <script src="main.js"></script> 
-</body>
+        <div id="value"></div>
+
+        <div id="control">
+          <!-- "Must Do Task" -->
+          <!-- "Task" -->
+          <input
+            maxlength="30"
+            id="task-input"
+            class="input"
+            type="text"
+            placeholder="Юу хийх вэ?"
+          />
+          <!-- "Who is Doing" -->
+          <input
+            maxlength="30"
+            id="who-input"
+            class="input"
+            type="text"
+            placeholder="Хэн энэ даалгаврыг хийх вэ?"
+          />
+          <!-- "When to Finish Task" -->
+          <input
+            maxlength="30"
+            id="when-input"
+            class="input"
+            type="text"
+            placeholder="Төгсгөлийн хугацаа?"
+          />
+
+          <button
+            id="button"
+            class="button"
+            onclick="addTask();"
+            style="color: hsl(0, 0%, 48%)"
+          >
+            Даалгавар нэмэх
+            <!-- "Add Task" -->
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
 </html>
