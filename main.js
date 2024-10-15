@@ -25,7 +25,7 @@ function addTask(event) {
       if (tasks.length < 25) {
         tasks.push(task); // Add new task
       } else {
-        alert("You can only add up to 25 tasks.");
+        alert("Та зөвхөн 25 хүртэлх ажлыг нэмж болно.");
         return;
       }
     }
@@ -33,7 +33,7 @@ function addTask(event) {
     clearInputFields();
     updateTaskList();
   } else {
-    alert("Please fill in all fields.");
+    alert("Бүх талбарыг бөглөнө үү.");
   }
 }
 
@@ -57,7 +57,7 @@ function updateTaskList() {
             <p><strong>Хэн хийх:</strong> ${task.who}</p>
             <p><strong>Хэзээ дуусгах:</strong> ${task.when}</p>
             <br>
-            <button class="button" onclick="completeTask(${index})">Дуусгах</button>
+            <button class="button" onclick="completeTask(${index})">Хийсэн</button>
             <button class="button" onclick="deleteTask(${index})">Устгах</button>
             <button class="button" onclick="editTask(${index})">Засах</button>
             <hr />
@@ -75,7 +75,7 @@ function updateTaskList() {
 // Function to display points
 function displayPoints() {
   const pointsDiv = document.getElementById("points");
-  pointsDiv.innerHTML = "<h3>Тасалж авсан оноо:</h3>";
+  pointsDiv.innerHTML = "<h3>Таны цуглуулсан оноо:</h3>";
 
   for (const user in points) {
     pointsDiv.innerHTML += `<p>${user}: ${points[user]} оноо</p>`;
