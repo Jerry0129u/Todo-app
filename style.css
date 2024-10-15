@@ -14,7 +14,7 @@ body {
 #width {
   margin-top: 100px;
   padding: 20px;
-  width: 1800px;
+  width: 880px;
 }
 
 #hero-section {
@@ -31,14 +31,28 @@ body {
 
 #control {
   margin-top: 20px;
+}
+
+#task-form {
   display: flex;
-  flex-direction: row;
-  gap: 5px;
+  flex-direction: column;
+  gap: 10px;
+  width: 800px;
+}
+
+@media screen and (max-width: 420px) {
+  #task-form {
+    width: 340px;
+  }
+}
+
+#button {
+  width: 200px;
 }
 
 @media screen and (max-width: 420px) {
   #control {
-    flex-direction: column;
+    width: 320px;
   }
 }
 
@@ -46,8 +60,19 @@ body {
   font-size: 25px;
 }
 
+@media screen and (max-width: 420px) {
+  #title {
+    font-size: 18px;
+  }
+}
+
 #value {
   margin-top: 10px;
+}
+
+#points {
+  margin-top: 20px; /* Add top margin */
+  font-size: 16px; /* Optional for better readability */
 }
 
 .task-item {
